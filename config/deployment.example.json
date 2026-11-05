@@ -1,0 +1,9 @@
+{
+  "appId": "00000000-0000-4000-8000-000000000001",
+  "developer": {
+    "name": "Org Document Search Example",
+    "websiteUrl": "https://example.com",
+    "privacyUrl": "https://example.com/privacy",
+    "termsOfUseUrl": "https://example.com/terms"
+  }
+}

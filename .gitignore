@@ -1,0 +1,17 @@
+node_modules/
+dist/
+appPackage/.generated/
+appPackage/build/
+env/.env.*
+!env/.env.*.example
+local/
+evaluation/private/
+*.log
+.DS_Store
+Thumbs.db
+.claude-flow/
+.ruflo/
+.swarm/
+.env
+.env.*
+!*.example

@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "evidenceType": "tenant",
+  "observations": [],
+  "reviewCoverage": {
+    "permissionIsolationAcrossAccounts": "not_tested",
+    "sensitivityControls": "not_tested",
+    "webIsolation": "not_tested",
+    "fullMatrixReviewed": "not_tested"
+  }
+}

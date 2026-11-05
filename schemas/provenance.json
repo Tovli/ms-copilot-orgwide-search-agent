@@ -1,0 +1,23 @@
+{
+  "retrievedOn": "2026-11-05",
+  "schemas": [
+    {
+      "kind": "agent",
+      "file": "declarative-agent-v1.5.schema.json",
+      "url": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.5/schema.json",
+      "sha256": "908c952274e6ccd394c25fafa75f74fa8b923db75a87eed02db90b8e908dacc4"
+    },
+    {
+      "kind": "app",
+      "file": "m365-app-v1.30.schema.json",
+      "url": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.30/MicrosoftTeams.schema.json",
+      "sha256": "dfc85799e94527a16a622988620c82de1f58e790f97001e5e6bbe37fcf6846df"
+    },
+    {
+      "kind": "toolkit",
+      "file": "toolkit-v1.12.schema.json",
+      "url": "https://developer.microsoft.com/json-schemas/teams-toolkit/teamsapp-yaml/v1.12/yaml.schema.json",
+      "sha256": "7e4b57a5d906abdc62c4069abe03bd25dfb57560d4b5cb2d11d2de28078a0348"
+    }
+  ]
+}

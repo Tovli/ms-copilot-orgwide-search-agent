@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.30/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.30",
+  "version": "0.1.0",
+  "id": "${{TEAMS_APP_ID}}",
+  "developer": {
+    "name": "${{DEVELOPER_NAME}}",
+    "websiteUrl": "${{DEVELOPER_WEBSITE_URL}}",
+    "privacyUrl": "${{DEVELOPER_PRIVACY_URL}}",
+    "termsOfUseUrl": "${{DEVELOPER_TERMS_URL}}"
+  },
+  "name": {
+    "short": "Org Document Search",
+    "full": "Org Document Search"
+  },
+  "description": {
+    "short": "Find documents across your authorized OneDrive and SharePoint content.",
+    "full": "Search OneDrive and SharePoint for documents available to you. Find relevant files using natural language, multilingual terminology, document content, metadata, authors, collaborators, projects, and organizations. Discover documents even when their filenames or language differ from your search terms. Search quality depends on Microsoft 365 retrieval, indexing, permissions, and tenant configuration."
+  },
+  "icons": { "color": "color.png", "outline": "outline.png" },
+  "accentColor": "#174EA6",
+  "copilotAgents": {
+    "declarativeAgents": [ { "id": "orgDocumentSearch", "file": "declarativeAgent.json" } ]
+  }
+}
