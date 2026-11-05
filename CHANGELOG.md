@@ -12,6 +12,6 @@ The project follows semantic versioning. This file records source changes; it is
 - Require explicit package verification profiles, trusted checksum sidecars, and tenant identity/publisher checks; support comparison with an independently approved app ID.
 - Align pilot acceptance with concise relevant results, retain standard precision@k diagnostics, and reject run-supplied gate thresholds.
 - Detect Entra-shaped secret assignments and scan committed env examples, isolate test compilation/staging, reject trailing-dot publisher hosts, refresh environment file permissions, and avoid duplicate feature-branch push/PR CI runs.
-- Propose Apache License 2.0, subject to owner confirmation before public release.
+- Adopt Apache License 2.0 following the project owner's approval.
 
 Authenticated retrieval, multilingual quality, permission isolation, performance, administrative approval, and production deployment remain unverified until separately recorded.

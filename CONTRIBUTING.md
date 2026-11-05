@@ -24,4 +24,4 @@ Use semantic versioning. Identify breaking changes explicitly, provide migration
 
 Maintainers review security-sensitive manifest changes, dependency updates, deployment configuration, and release contents. Tenant integration tests are optional for ordinary contributors and mandatory evidence for a production rollout. Keep their records in the installing organization's controlled storage.
 
-The repository owner must confirm the proposed Apache-2.0 license and enable private vulnerability reporting before public release. Contributions are not treated as a substitute for that licensing decision. See [SECURITY.md](SECURITY.md) for private disclosure.
+The repository owner has adopted Apache-2.0; contributions are distributed under the project's [Apache License 2.0](LICENSE). Maintain private vulnerability reporting for public releases. See [SECURITY.md](SECURITY.md) for private disclosure.

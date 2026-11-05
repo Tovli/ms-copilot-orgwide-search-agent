@@ -17,7 +17,7 @@ Subsequent review remediation includes **55 passing tests**, tenant identity enf
 | Automated tests | `tests/project.test.mjs` (15 tests), `tests/evaluation.test.mjs` (24 tests) |
 | Public CI | `.github/workflows/validate.yml`, `.github/dependabot.yml`; pinned Actions, tenant-free Windows/Ubuntu checks |
 | Documentation | README, SECURITY, TESTING, LIMITATIONS, ADMIN_DEPLOYMENT_CHECKLIST, CONTRIBUTING, CODE_OF_CONDUCT, CHANGELOG, this report, architecture and discovery records |
-| Licensing/assets | Proposed Apache-2.0 LICENSE, THIRD_PARTY_NOTICES, original icon generator under `assets/` |
+| Licensing/assets | Adopted Apache-2.0 LICENSE, THIRD_PARTY_NOTICES, original icon generator under `assets/` |
 | Repository hygiene | `.gitignore`, `.gitattributes`; dependencies, private evaluation inputs, local config, environment files and deployment artifacts excluded from Git |
 
 ## Architecture and toolchain
@@ -92,7 +92,7 @@ The following have not been executed: authentication, personal provisioning/publ
 
 ## Remaining manual acceptance
 
-1. Review the proposed Apache-2.0 license and establish private vulnerability/conduct reporting contacts before public release. The license is explicitly proposed, not silently adopted.
+1. Maintain private vulnerability/conduct reporting contacts and repository protection for public releases. The project owner has adopted Apache License 2.0; license adoption is no longer pending.
 2. Create ignored installation configuration with persistent app identity and genuine publisher/privacy/terms URLs, then configure, package and verify using README.
 3. Use an approved licensed pilot account to sign in and run remote package rules/test cases and the personal Toolkit lifecycle or package installation. Confirm security-driven dependency overrides work with authentication.
 4. Complete the real-document matrix in TESTING.md, including both English/Hebrew directions, two-account isolation, sensitivity/injection checks and measured performance. Record every skip/failure privately. The scorer consumes reviewed observations; it neither runs searches nor proves their provenance.

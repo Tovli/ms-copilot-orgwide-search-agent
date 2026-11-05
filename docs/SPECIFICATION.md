@@ -36,7 +36,7 @@ Provide complete source, manifests, valid icons, Toolkit configuration, reproduc
 
 Reusable source and public fixtures must contain no credentials, real organizational documents, tenant identifiers, or private source locations. Installing organizations supply their own persistent app identity and public publisher/privacy/terms pages through ignored configuration. Keep installation-specific packages and real evaluation evidence out of Git and public CI.
 
-Include tenant-free GitHub Actions validation, automated tests, setup/deployment/release documentation, security policy, platform limitations, contribution guidance, and administrator checklist. Apache-2.0 is proposed pending owner adoption before public release. Do not authenticate, grant admin consent, change tenant security policy, or deploy to production as part of local implementation.
+Include tenant-free GitHub Actions validation, automated tests, setup/deployment/release documentation, security policy, platform limitations, contribution guidance, and administrator checklist. Use Apache License 2.0, adopted by the project owner. Do not authenticate, grant admin consent, change tenant security policy, or deploy to production as part of local implementation.
 
 ## Acceptance and traceability
 
