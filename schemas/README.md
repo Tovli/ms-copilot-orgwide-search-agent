@@ -2,6 +2,8 @@
 
 These unmodified JSON files are fetched from Microsoft's schema endpoints. `provenance.json` records their source URLs, retrieval date, and SHA-256. Local validation checks those hashes before compiling schemas; pull requests need no tenant or network access.
 
+Git preserves these schema files byte-for-byte (`-text` in `.gitattributes`), including upstream CRLF line endings. Do not normalize or reformat them without intentionally updating and reviewing their provenance; fresh Linux and Windows checkouts must match the recorded digests.
+
 The stable `@microsoft/typespec-m365-copilot` 1.0.0 emitter hardcodes declarative-agent schema **v1.5**. Although Microsoft's current reference also documents newer schema versions, this project preserves the stable emitter's output instead of relabeling it. The Toolkit 1.1.19 template uses Microsoft 365 application manifest **1.30**.
 
 The app and agent schemas declare JSON Schema draft-04; Microsoft also uses keywords such as `const` and `$defs`. Validation uses `ajv-draft-04` with `ajv-formats`, with strict-schema warnings disabled to accept Microsoft's published schemas. The Toolkit v1.12 YAML lifecycle schema uses draft-07 and is validated separately with Ajv after parsing YAML. Additional lifecycle invariants require compilation, staging, packaging, validation, and personal-only publication in order. Schema validation and project invariants supplement Microsoft Toolkit package validation; they do not establish runtime retrieval quality.
