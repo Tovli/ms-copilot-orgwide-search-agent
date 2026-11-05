@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="530" viewBox="0 0 1200 530" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">A valid ZIP is the start: local checks, tenant evidence, administrator approval</title>
+  <desc id="description">Three separate stages: build and verify locally; test retrieval relevance, English and Hebrew behavior, permissions and latency in the installing tenant; then have an administrator review evidence, publish to a pilot group and approve broader availability. A valid package alone is not production approval. This conceptual path does not report that tenant tests or approval have occurred. Animated connectors illustrate progression, all labels remain visible without animation, and reduced-motion preferences stop the animation.</desc>
+  <!-- Original vector artwork. Palette and editorial labels inspired by https://me.tovli.co.il/. -->
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.8" fill="#1455CC" fill-opacity="0.10"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M1 1L6 4L1 7" stroke="#1455CC" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <style>
+    text{font-family:Inter,"Segoe UI",Arial,sans-serif}
+    .mono{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;letter-spacing:1.4px}
+    .edge{stroke:#1455CC;stroke-width:1.5;stroke-dasharray:4 7;animation:flow 3.3s linear infinite}
+    .accent{animation:accent 12s ease-in-out infinite}
+    .second{animation-delay:3s}.third{animation-delay:6s}
+    @keyframes flow{to{stroke-dashoffset:-44}}
+    @keyframes accent{0%,10%,40%,100%{opacity:.4}20%,30%{opacity:1}}
+    @media(prefers-reduced-motion:reduce){.edge,.accent{animation:none!important}}
+  </style>
+
+  <rect x="1" y="1" width="1198" height="528" rx="24" fill="#F7FAFF" stroke="#DAE5F3"/>
+  <rect x="2" y="2" width="1196" height="526" rx="23" fill="url(#grid)"/>
+  <path d="M44 39H51V46H44Z" fill="#1455CC"/>
+  <text x="64" y="46" class="mono" font-size="11" fill="#536981">02 / FROM PACKAGE TO PRODUCTION</text>
+  <text x="1156" y="46" text-anchor="end" class="mono" font-size="10" fill="#1455CC">EVIDENCE AT EVERY GATE</text>
+  <text x="44" y="104" font-size="36" font-weight="700" letter-spacing="-1.2" fill="#071B37">A valid ZIP is the start.</text>
+  <text x="44" y="136" font-size="16" fill="#536981">Build locally. Measure in your tenant. Publish with administrator approval.</text>
+
+  <path d="M374 298H425" class="edge" marker-end="url(#arrow)"/>
+  <path d="M765 298H816" class="edge" marker-end="url(#arrow)"/>
+
+  <rect x="44" y="182" width="330" height="242" rx="13" fill="#FFFFFF" stroke="#B6CAE3"/>
+  <path d="M65 183H353" stroke="#1455CC" stroke-width="3" class="accent"/>
+  <rect x="65" y="203" width="34" height="28" rx="5" fill="#EAF1FF"/>
+  <text x="82" y="222" text-anchor="middle" class="mono" font-size="11" fill="#1455CC">01</text>
+  <text x="113" y="222" class="mono" font-size="10" fill="#536981">LOCAL</text>
+  <text x="65" y="269" font-size="24" font-weight="650" letter-spacing="-.5" fill="#071B37">Build &amp; verify</text>
+  <path d="M65 290H353" stroke="#DAE5F3"/>
+  <circle cx="69" cy="318" r="3" fill="#1455CC"/>
+  <text x="82" y="323" font-size="14" fill="#2F4564">Compile + official schemas</text>
+  <circle cx="69" cy="350" r="3" fill="#1455CC"/>
+  <text x="82" y="355" font-size="14" fill="#2F4564">Native scope + package checks</text>
+  <circle cx="69" cy="382" r="3" fill="#1455CC"/>
+  <text x="82" y="387" font-size="14" fill="#2F4564">Pinned identity + checksum</text>
+
+  <rect x="435" y="182" width="330" height="242" rx="13" fill="#071B37" stroke="#244469"/>
+  <path d="M456 183H744" stroke="#8AB5FF" stroke-width="3" class="accent second"/>
+  <rect x="456" y="203" width="34" height="28" rx="5" fill="#113E84"/>
+  <text x="473" y="222" text-anchor="middle" class="mono" font-size="11" fill="#C8DBFF">02</text>
+  <text x="504" y="222" class="mono" font-size="10" fill="#B8CBE4">AUTHENTICATED</text>
+  <text x="456" y="269" font-size="24" font-weight="650" letter-spacing="-.5" fill="#FFFFFF">Test in your tenant</text>
+  <path d="M456 290H744" stroke="#375B90"/>
+  <circle cx="460" cy="318" r="3" fill="#8AB5FF"/>
+  <text x="473" y="323" font-size="14" fill="#D5E3F8">Relevance + English ↔ Hebrew</text>
+  <circle cx="460" cy="350" r="3" fill="#8AB5FF"/>
+  <text x="473" y="355" font-size="14" fill="#D5E3F8">Permissions + injection checks</text>
+  <circle cx="460" cy="382" r="3" fill="#8AB5FF"/>
+  <text x="473" y="387" font-size="14" fill="#D5E3F8">Measured response times</text>
+
+  <rect x="826" y="182" width="330" height="242" rx="13" fill="#FFFFFF" stroke="#B6CAE3"/>
+  <path d="M847 183H1135" stroke="#1455CC" stroke-width="3" class="accent third"/>
+  <rect x="847" y="203" width="34" height="28" rx="5" fill="#EAF1FF"/>
+  <text x="864" y="222" text-anchor="middle" class="mono" font-size="11" fill="#1455CC">03</text>
+  <text x="895" y="222" class="mono" font-size="10" fill="#536981">ADMINISTRATOR</text>
+  <text x="847" y="269" font-size="24" font-weight="650" letter-spacing="-.5" fill="#071B37">Approve &amp; roll out</text>
+  <path d="M847 290H1135" stroke="#DAE5F3"/>
+  <circle cx="851" cy="318" r="3" fill="#1455CC"/>
+  <text x="864" y="323" font-size="14" fill="#2F4564">Review the pilot evidence</text>
+  <circle cx="851" cy="350" r="3" fill="#1455CC"/>
+  <text x="864" y="355" font-size="14" fill="#2F4564">Publish to a pilot group</text>
+  <circle cx="851" cy="382" r="3" fill="#1455CC"/>
+  <text x="864" y="387" font-size="14" fill="#2F4564">Approve broader availability</text>
+
+  <path d="M44 456H1156" stroke="#DAE5F3"/>
+  <text x="44" y="486" font-size="14" font-weight="650" fill="#1455CC">Local checks ≠ production approval.</text>
+  <text x="44" y="507" font-size="12" fill="#536981">Each gate needs its own evidence.</text>
+  <text x="1156" y="506" text-anchor="end" class="mono" font-size="9" fill="#536981">CONCEPTUAL PATH / NO DEPLOYMENT STATUS IMPLIED</text>
+</svg>

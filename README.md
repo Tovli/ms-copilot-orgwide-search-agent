@@ -2,6 +2,8 @@
 
 Find organizational documents in OneDrive and SharePoint using natural language, document content, and available metadata. The agent includes English/Hebrew discovery guidance, concise ranked results with source evidence, original document titles, and transparent handling of weak matches or retrieval errors.
 
+![Conceptual flow: your natural-language request goes through Microsoft 365 Copilot to unscoped OneDrive and SharePoint sources under existing access controls, returning relevant file evidence. Cross-language matches are best effort.](assets/readme/document-discovery.svg)
+
 This is a Microsoft 365 declarative agent using Microsoft-managed retrieval and orchestration. Its only native capability is:
 
 ```json
@@ -28,6 +30,8 @@ Local schema, configuration, package, and synthetic tests are separate from actu
 Microsoft's general agent guidance discusses Copilot Chat metered consumption for organizational grounding. However, the current SharePoint/OneDrive knowledge-source note and known-issues page explicitly require an active Microsoft 365 Copilot user license and describe runtime failure without one. Treat metered-only operation for this particular agent as requiring confirmation and a successful pilot in your tenant; this repository does not guarantee it. Do not enable billing or buy licenses solely on the basis of a successful ZIP build. [Agent licensing scenarios](https://learn.microsoft.com/en-us/microsoft-365/copilot/agent-essentials/m365-agents-admin-guide), [source-specific requirements](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/knowledge-sources), [runtime license issue](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/known-issues).
 
 ## Clone and validate without a tenant
+
+![Three separate acceptance stages: build and verify locally, test relevance and security in your tenant, then obtain administrator approval and roll out. Local package checks do not establish production readiness.](assets/readme/acceptance-gates.svg)
 
 Clone the published repository URL supplied by the project owner, then run these commands in the repository root:
 

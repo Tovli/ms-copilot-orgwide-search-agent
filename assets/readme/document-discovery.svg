@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">Native document discovery, within your existing Microsoft 365 permissions</title>
+  <desc id="description">A natural-language request, in English or Hebrew, goes to Microsoft 365 Copilot. Its native retrieval searches unscoped OneDrive and SharePoint sources under the signed-in user's existing access controls, then presents relevant returned evidence with source links. This is a conceptual diagram, not a live search or a guarantee of cross-language recall. Moving connector dashes and gently highlighted cards illustrate the flow. The complete diagram remains visible without animation, and motion stops when reduced motion is preferred.</desc>
+  <!-- Original vector artwork. Blueprint palette inspired by https://me.tovli.co.il/assets/tokens.css. -->
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.8" fill="#8AB5FF" fill-opacity="0.14"/>
+    </pattern>
+    <linearGradient id="copilot-surface" x1="330" y1="240" x2="570" y2="414" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#113E84"/>
+      <stop offset="1" stop-color="#0E2A55"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M1 1L6 4L1 7" stroke="#8AB5FF" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <symbol id="file" viewBox="0 0 24 28">
+      <path d="M3 1H15L22 8V27H3V1Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+      <path d="M15 1V8H22M7 14H17M7 19H15" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+  <style>
+    text{font-family:Inter,"Segoe UI",Arial,sans-serif}
+    .mono{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;letter-spacing:1.5px}
+    .edge{stroke:#8AB5FF;stroke-width:1.5;stroke-dasharray:4 7;animation:flow 3.3s linear infinite}
+    .focus{animation:focus 12s ease-in-out infinite}
+    .focus-b{animation-delay:2s}.focus-c{animation-delay:4s}.focus-d{animation-delay:6s}
+    .orbit{transform-origin:442px 278px;animation:orbit 18s linear infinite}
+    @keyframes flow{to{stroke-dashoffset:-44}}
+    @keyframes focus{0%,10%,38%,100%{stroke:#375B90}18%,28%{stroke:#8AB5FF}}
+    @keyframes orbit{to{transform:rotate(360deg)}}
+    @media(prefers-reduced-motion:reduce){.edge,.focus,.orbit{animation:none!important}}
+  </style>
+
+  <rect x="1" y="1" width="1198" height="648" rx="24" fill="#071B37" stroke="#244469"/>
+  <rect x="2" y="2" width="1196" height="646" rx="23" fill="url(#grid)"/>
+  <path d="M44 40H51V47H44Z" fill="#8AB5FF"/>
+  <text x="64" y="47" class="mono" font-size="11" fill="#B8CBE4">01 / NATIVE DOCUMENT DISCOVERY</text>
+  <text x="1156" y="47" text-anchor="end" class="mono" font-size="10" fill="#8AB5FF">ORG DOCUMENT SEARCH</text>
+  <text x="44" y="108" font-size="37" font-weight="700" letter-spacing="-1.2" fill="#FFFFFF">Find the document.</text>
+  <text x="377" y="108" font-size="37" font-weight="700" letter-spacing="-1.2" fill="#8AB5FF">Keep the boundary.</text>
+  <text x="44" y="141" font-size="16" fill="#B8CBE4">Natural-language requests. Microsoft-managed retrieval. Evidence you can open.</text>
+  <path d="M44 173H1156" stroke="#C8DBFF" stroke-opacity="0.18"/>
+
+  <text x="44" y="211" class="mono" font-size="10" fill="#8AB5FF">ASK IN YOUR LANGUAGE</text>
+  <text x="330" y="211" class="mono" font-size="10" fill="#8AB5FF">NATIVE ORCHESTRATION</text>
+  <text x="940" y="211" class="mono" font-size="10" fill="#8AB5FF">RETURNED EVIDENCE</text>
+
+  <path d="M270 330H320" class="edge" marker-end="url(#arrow)"/>
+  <path d="M570 330H620" class="edge" marker-end="url(#arrow)"/>
+  <path d="M880 330H930" class="edge" marker-end="url(#arrow)"/>
+
+  <rect x="44" y="240" width="226" height="174" rx="13" fill="#0A2346" stroke="#375B90" class="focus"/>
+  <circle cx="76" cy="277" r="10" stroke="#8AB5FF" stroke-width="1.5"/>
+  <path d="M83 284L89 290" stroke="#8AB5FF" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="104" y="282" font-size="17" font-weight="650" fill="#FFFFFF">Your request</text>
+  <text x="65" y="324" font-size="18" fill="#EAF1FF">“Find marketing</text>
+  <text x="65" y="350" font-size="18" fill="#EAF1FF">documents”</text>
+  <rect x="65" y="372" width="75" height="23" rx="5" fill="#113E84"/>
+  <text x="102" y="388" text-anchor="middle" font-size="11" fill="#C8DBFF">EN ↔ HE</text>
+  <rect x="150" y="372" width="98" height="23" rx="5" fill="#0E2A55" stroke="#375B90"/>
+  <text x="199" y="388" text-anchor="middle" direction="rtl" xml:lang="he" font-size="13" fill="#C8DBFF">שיווק</text>
+
+  <rect x="330" y="240" width="240" height="174" rx="13" fill="url(#copilot-surface)" stroke="#375B90" class="focus focus-b"/>
+  <circle cx="442" cy="278" r="19" stroke="#81ADFF" stroke-opacity="0.48"/>
+  <g class="orbit">
+    <circle cx="442" cy="259" r="3" fill="#C8DBFF"/>
+    <circle cx="442" cy="297" r="2" fill="#8AB5FF"/>
+  </g>
+  <path d="M442 268L445 275L452 278L445 281L442 288L439 281L432 278L439 275Z" fill="#EAF1FF"/>
+  <text x="450" y="326" text-anchor="middle" font-size="21" font-weight="650" fill="#FFFFFF">Microsoft 365</text>
+  <text x="450" y="353" text-anchor="middle" font-size="21" font-weight="650" fill="#FFFFFF">Copilot</text>
+  <text x="450" y="387" text-anchor="middle" font-size="12" fill="#C8DBFF">Intent · concepts · relevance</text>
+
+  <rect x="630" y="224" width="250" height="245" rx="14" fill="#0A2346" stroke="#375B90" class="focus focus-c"/>
+  <path d="M651 244L658 241L665 244V250C665 256 658 260 658 260C658 260 651 256 651 250Z" stroke="#8AB5FF" stroke-width="1.3" stroke-linejoin="round"/>
+  <path d="M655 250L658 253L662 247" stroke="#C8DBFF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="675" y="253" font-size="13" font-weight="600" fill="#C8DBFF">Existing access controls</text>
+  <path d="M650 269H860" stroke="#375B90" stroke-opacity="0.7"/>
+  <rect x="651" y="284" width="208" height="59" rx="8" fill="#0E2A55" stroke="#375B90"/>
+  <path d="M668 316C663 316 662 309 667 307C668 299 678 298 681 304C687 302 692 306 691 311C696 315 692 320 688 320H669" stroke="#8AB5FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="705" y="319" font-size="16" font-weight="600" fill="#FFFFFF">OneDrive</text>
+  <rect x="651" y="355" width="208" height="59" rx="8" fill="#0E2A55" stroke="#375B90"/>
+  <rect x="666" y="373" width="13" height="13" rx="2" stroke="#8AB5FF" stroke-width="1.3"/>
+  <rect x="679" y="380" width="12" height="12" rx="2" stroke="#8AB5FF" stroke-width="1.3"/>
+  <path d="M679 379L684 374" stroke="#8AB5FF" stroke-width="1.3"/>
+  <text x="705" y="390" font-size="16" font-weight="600" fill="#FFFFFF">SharePoint</text>
+  <text x="755" y="446" text-anchor="middle" class="mono" font-size="10" fill="#8AB5FF">UNSCOPED SOURCES</text>
+
+  <rect x="940" y="240" width="216" height="174" rx="13" fill="#0A2346" stroke="#375B90" class="focus focus-d"/>
+  <use href="#file" x="960" y="262" width="20" height="25" color="#8AB5FF"/>
+  <text x="992" y="281" font-size="17" font-weight="650" fill="#FFFFFF">Relevant files</text>
+  <path d="M962 307H1134" stroke="#375B90"/>
+  <circle cx="966" cy="330" r="2.5" fill="#8AB5FF"/>
+  <text x="978" y="335" font-size="13" fill="#D5E3F8">Original title + source</text>
+  <circle cx="966" cy="356" r="2.5" fill="#8AB5FF"/>
+  <text x="978" y="361" font-size="13" fill="#D5E3F8">Why it matches</text>
+  <circle cx="966" cy="382" r="2.5" fill="#8AB5FF"/>
+  <text x="978" y="387" font-size="13" fill="#D5E3F8">Available metadata</text>
+
+  <text x="44" y="455" font-size="12" fill="#9BBFFF">Illustrative query</text>
+  <text x="330" y="455" font-size="12" fill="#9BBFFF">No custom backend</text>
+  <text x="940" y="455" font-size="12" fill="#9BBFFF">Source links when available</text>
+
+  <rect x="44" y="503" width="1112" height="66" rx="10" fill="#0E2A55" stroke="#244469"/>
+  <text x="65" y="530" font-size="14" font-weight="600" fill="#EAF1FF">Broad search scope. Existing permissions.</text>
+  <text x="65" y="550" font-size="12" fill="#B8CBE4">No selected files or sites · No added file permissions · No public web search</text>
+  <path d="M44 598H1156" stroke="#C8DBFF" stroke-opacity="0.18"/>
+  <text x="44" y="624" class="mono" font-size="9" fill="#9BBFFF">CONCEPTUAL FLOW / NO LIVE SEARCH SHOWN</text>
+  <text x="1156" y="624" text-anchor="end" font-size="11" fill="#B8CBE4">Microsoft controls retrieval and ranking; cross-language matches are best effort.</text>
+</svg>
