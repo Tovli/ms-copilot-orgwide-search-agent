@@ -18,4 +18,4 @@ Keep the approved environment, configuration, ZIP, digest and app UUID in contro
 
 ## Verification
 
-Regression tests cover changed/missing/malformed identity baselines, all tenant packaging entry points, renamed synthetic artifacts, publisher drift, independently approved identity mismatch, missing/tampered digest records and ambiguous CLI invocation. Test fixtures compile and stage in temporary directories, preserving actual build artifacts. See [review findings](../REVIEW_FINDINGS.md) for execution evidence and [README](../../README.md) for recovery and administrator commands.
+Regression tests cover changed/missing/malformed identity baselines, all tenant packaging entry points, renamed synthetic artifacts, publisher drift, independently approved identity mismatch, missing/tampered digest records and ambiguous CLI invocation. Test fixtures compile and stage in temporary directories, preserving actual build artifacts. See the [implementation report](../../IMPLEMENTATION_REPORT.md) for execution evidence and [README](../../README.md) for recovery and administrator commands.

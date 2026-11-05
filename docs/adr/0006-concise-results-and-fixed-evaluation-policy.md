@@ -18,4 +18,4 @@ One or two correct documents can satisfy a narrow query without filling empty sl
 
 ## Verification
 
-Regression tests cover one/two correct results at k=5, noisy results, missing positives, empty/error responses, and attempted policy overrides from both inputs. See [TESTING](../../TESTING.md), [evaluation format](../../evaluation/README.md), and [review findings](../REVIEW_FINDINGS.md).
+Regression tests cover one/two correct results at k=5, noisy results, missing positives, empty/error responses, and attempted policy overrides from both inputs. See [TESTING](../../TESTING.md), [evaluation format](../../evaluation/README.md), and the [implementation report](../../IMPLEMENTATION_REPORT.md).

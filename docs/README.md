@@ -11,6 +11,5 @@ The specification and ADRs below preserve the requirements and decisions used du
 - [ADR 0004 — Packaging and acceptance boundaries](adr/0004-packaging-and-acceptance-boundaries.md).
 - [ADR 0005 — Installation identity and release evidence](adr/0005-installation-identity-and-release-evidence.md).
 - [ADR 0006 — Concise results and fixed evaluation policy](adr/0006-concise-results-and-fixed-evaluation-policy.md).
-- [Review finding remediation](REVIEW_FINDINGS.md): fixes, regression evidence, and remaining external checks.
 
 The root-level [implementation report](../IMPLEMENTATION_REPORT.md), [testing guide](../TESTING.md), [security policy](../SECURITY.md), and [limitations](../LIMITATIONS.md) retain the deliverable locations required by the original brief.

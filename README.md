@@ -33,9 +33,11 @@ Microsoft's general agent guidance discusses Copilot Chat metered consumption fo
 
 ![Three separate acceptance stages: build and verify locally, test relevance and security in your tenant, then obtain administrator approval and roll out. Local package checks do not establish production readiness.](assets/readme/acceptance-gates.svg)
 
-Clone the published repository URL supplied by the project owner, then run these commands in the repository root:
+Clone the repository, then run these commands in its root:
 
 ```sh
+git clone https://github.com/Tovli/ms-copilot-orgwide-search-agent.git
+cd ms-copilot-orgwide-search-agent
 npm ci --ignore-scripts
 npm run build
 npm run validate
@@ -164,6 +166,6 @@ See [LIMITATIONS.md](LIMITATIONS.md) before changing the architecture or promisi
 
 ## License and contribution
 
-**Apache License 2.0 is proposed and requires the repository owner's confirmation before public publication.** The proposed text is in [LICENSE](LICENSE); do not interpret its inclusion as a recorded owner adoption decision. The package remains private to prevent accidental npm publication. Open-source terms, once adopted, do not license Microsoft services.
+**Apache License 2.0 remains proposed, pending the repository owner's adoption.** The source repository is publicly visible; this publication does not record adoption of the proposal in [LICENSE](LICENSE). The package remains private to prevent accidental npm publication. Open-source terms, once adopted, do not license Microsoft services.
 
-Development tools and schema assets carry their own licenses. Preserve their notices and review the lockfile dependencies before redistributing bundled tooling; the agent ZIP itself does not contain `node_modules`. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md), [CONTRIBUTING.md](CONTRIBUTING.md), [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md), and [SECURITY.md](SECURITY.md). Private reporting contacts and owner licensing confirmation remain public-release checklist items.
+Development tools and schema assets carry their own licenses. Preserve their notices and review the lockfile dependencies before redistributing bundled tooling; the agent ZIP itself does not contain `node_modules`. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md), [CONTRIBUTING.md](CONTRIBUTING.md), [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md), and [SECURITY.md](SECURITY.md). Private vulnerability reporting is enabled on the canonical repository; report security issues through its [private advisory form](https://github.com/Tovli/ms-copilot-orgwide-search-agent/security/advisories/new). License adoption remains a formal open-source release checklist item.

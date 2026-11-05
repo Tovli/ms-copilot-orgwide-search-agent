@@ -2,7 +2,7 @@
 
 Local implementation completed on 2026-11-05. **Production readiness is not established.** No authentication, provisioning, administrator consent, tenant installation, organizational publishing, or production deployment was completed.
 
-Subsequent review remediation is recorded in [docs/REVIEW_FINDINGS.md](docs/REVIEW_FINDINGS.md), including **55 passing tests**, tenant identity enforcement, explicit deployment verification/checksum checks, concise-result acceptance metrics, fixed evaluation policy, and expanded credential scanning. The original validation record below predates those fixes; current CLI usage is in README. In particular, explicit package verification now requires `--profile`, and every verified ZIP requires a trusted producer's matching `.zip.sha256` sidecar.
+Subsequent review remediation includes **55 passing tests**, tenant identity enforcement, explicit deployment verification/checksum checks, concise-result acceptance metrics, fixed evaluation policy, and expanded credential scanning. Decisions are recorded in [ADR 0005](docs/adr/0005-installation-identity-and-release-evidence.md) and [ADR 0006](docs/adr/0006-concise-results-and-fixed-evaluation-policy.md). The original validation record below predates those fixes; current CLI usage is in README. In particular, explicit package verification now requires `--profile`, and every verified ZIP requires a trusted producer's matching `.zip.sha256` sidecar.
 
 ## Delivered project
 
