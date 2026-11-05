@@ -33,6 +33,8 @@ Microsoft's general agent guidance discusses Copilot Chat metered consumption fo
 
 ![Three separate acceptance stages: build and verify locally, test relevance and security in your tenant, then obtain administrator approval and roll out. Local package checks do not establish production readiness.](assets/readme/acceptance-gates.svg)
 
+For an administrator-managed installation, follow this route: **clone and validate → [build your tenant package](#build-artifacts-and-configuration) → [administrator upload and pilot](#administrator-approval-and-organization-rollout)**. The [personal developer pilot](#optional-personal-developer-pilot-with-toolkit) is an alternative testing route, not a prerequisite for administrator upload. Local building and verification need no Microsoft 365 sign-in; uploading and testing require authorized tenant accounts.
+
 Clone the repository, then run these commands in its root:
 
 ```sh
@@ -52,6 +54,8 @@ npm audit --audit-level=moderate
 
 TypeSpec is the authoring format: `src/agent/main.tsp` and `src/agent/prompts/instructions.tsp` emit the declarative-agent JSON. The pinned baseline is Microsoft 365 Agents Toolkit CLI **1.1.19**, Microsoft Copilot TypeSpec emitter **1.0.0**, and TypeSpec compiler **1.17.0**. The application template uses schema **1.30**. The stable emitter produces declarative-agent schema **1.5**; newer Microsoft documentation currently describes **1.9**, but this project retains the version actually supported by the selected emitter instead of relabeling its output. The implementation report records compatibility validation. Do not hand-edit compiled output or upgrade schema numbers independently of the emitter and tests.
 
+Customers can edit the `SYNONYM GROUPS` section in [the source instructions](src/agent/prompts/instructions.tsp). Each group uses `Concept`, `Related terms` (separated by semicolons), and `Context` (the intended meaning and any ambiguity limits). Groups guide relevant query expansion; they do not establish document existence, override user constraints, or guarantee retrieval. Add only terminology suitable for everyone receiving that package, and keep private customer vocabulary out of the public repository. Groups are optional: if removed, normal semantic and multilingual discovery continues without an external glossary file. Following [Microsoft's instruction guidance](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-instructions#instruction-components), the glossary is included in the packaged instructions. The combined instructions must fit 8,000 characters; the build rejects oversized instructions. After editing, run `npm run check`, increment the version in `package.json`/`package-lock.json` and `appPackage/manifest.json`, rebuild the tenant package, and submit an update using the existing app identity. Editing source or pushing to GitHub does not update a deployed agent.
+
 Toolkit is a local development dependency, so no global install is necessary:
 
 ```sh
@@ -65,14 +69,16 @@ The CLI's supported operations and flags are described in the [Microsoft 365 Age
 
 The default package is `dist/validation/org-document-search-0.1.0.zip`. It uses the synthetic configuration in `config/deployment.example.json` and is intended for tenant-free build checks. **Do not upload that validation artifact as an organizational release.**
 
-For your installation, copy the example to ignored `local/deployment.json` and replace its app identity and publisher details:
+For a **new installation only**, copy the example to ignored `local/deployment.json` and replace its app identity and publisher details. The copy command refuses to overwrite an existing file; for an existing installation, retain or restore its approved configuration and identity instead:
 
 ```sh
-node -e "const fs=require('node:fs');fs.mkdirSync('local',{recursive:true});fs.copyFileSync('config/deployment.example.json','local/deployment.json',{flag:'wx'})"
+node -e "const fs=require('node:fs');fs.mkdirSync('local',{recursive:true});fs.copyFileSync('config/deployment.example.json','local/deployment.json',fs.constants.COPYFILE_EXCL)"
 node -e "console.log(require('node:crypto').randomUUID())"
 ```
 
 Generate a UUID only for a new installation. Keep the approved `appId` for every upgrade. Set `developer.name` (at most 32 characters) and the HTTPS `websiteUrl`, `privacyUrl`, and `termsOfUseUrl` fields to your publisher's real public pages. URLs must have no credentials, query, fragment, or trailing-dot hostname. Use distinct identities and separate checkouts for independent installations. This UUID is the application package identity, not a tenant ID, client secret, or authorization grant. Do not insert tenant IDs, file IDs, private SharePoint URLs, or credentials into source.
+
+The publisher domain belongs to your public website; it is not your Microsoft 365 tenant domain. Privacy and terms URLs must point to actual published pages.
 
 ```sh
 npm run configure -- --config local/deployment.json
@@ -90,9 +96,11 @@ npm run verify-package -- --profile tenant --config local/deployment.json --pack
 
 The installable artifact is `dist/tenant/org-document-search-0.1.0.zip`; retain its adjacent `.zip.sha256` sidecar with the trusted release record. Verification compares the digest and filename, rejects synthetic identities/publisher URLs in tenant mode, and compares the ZIP's identity and publisher with the pinned installation configuration. An explicit `--package` requires an explicit `--profile`. Running verification without arguments checks only the default artifact and prints **VALIDATION ONLY — NOT FOR DEPLOYMENT**. A checksum establishes integrity relative to that record, not producer authenticity. The local verifier does not query the administrator's catalog or guarantee that upload will reject a new identity with a familiar name. Generated deployment files, real evaluation records, and tenant packages remain separate from reusable source.
 
-## Authentication and pilot provisioning
+For administrator-managed deployment, continue to [administrator approval and organization rollout](#administrator-approval-and-organization-rollout). Personal provisioning or installation through Toolkit is not required for that route.
 
-These steps change your own tenant and are performed by an authorized developer, after checking policy and the account being used:
+## Optional personal developer pilot with Toolkit
+
+Use this route when an authorized developer wants to publish a personal test agent before organizational submission. These steps change your own tenant and are performed after checking policy and the account being used:
 
 ```sh
 npm exec -- atk auth login m365 --telemetry false
@@ -145,7 +153,15 @@ Use semantic versions and update the package version, application manifest, rele
 
 When an owner authorizes a public release, use the published repository's **Releases > Draft a new release**, choose a version tag such as `v0.1.0` at the reviewed commit, and write release notes describing behavior, local validation, and unexecuted tenant gates. GitHub supplies source archives. If attaching a validation ZIP, also attach its `.sha256` file and label both as synthetic and unsuitable for tenant deployment. Inspect every attachment for private configuration before selecting **Publish release**. A new tenant should download the source release, run the documented build checks, and generate its own deployment package using its own app identity and publisher configuration.
 
-To upgrade an existing installation, retain its `appId`, increase the version, rebuild using its ignored deployment configuration, validate, pilot, and resubmit through the administrator's supported update workflow. Review generated manifest diffs whenever the emitter or application schema changes. Do not assume another organization's packaged identity or publisher URLs can be reused unchanged.
+To upgrade an existing installation, retain its `appId`, increase the version, rebuild using its ignored deployment configuration, validate, pilot, and resubmit through the administrator's supported update workflow. For example, when moving from `0.1.0` to `0.1.1`:
+
+1. Run `npm version patch --no-git-tag-version` to update `package.json` and `package-lock.json`, then set `appPackage/manifest.json`'s `version` to the same value. Preserve both `local/deployment.json` and `env/.env.dev`.
+2. Run `npm run check` and `npm audit --audit-level=moderate`, then `npm run package:tenant -- --config local/deployment.json`.
+3. Run `npm run verify-package -- --profile tenant --config local/deployment.json --package dist/tenant/org-document-search-0.1.1.zip --expected-app-id <APPROVED_APP_ID>`, using the original approved identity and the filename for your new version.
+4. In Microsoft 365 admin center, select the existing agent under **Agents > All agents > Registry** and use **Update in store** to submit the new ZIP for review. Available controls vary by tenant and agent type. See [Microsoft's agent details reference](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-details).
+5. Confirm the new version and test the changed behavior, multilingual retrieval, source links, and permission isolation before broader acceptance.
+
+Review generated manifest diffs whenever the emitter or application schema changes. Do not assume another organization's packaged identity or publisher URLs can be reused unchanged. Pushing to GitHub does not deploy an update to Microsoft 365.
 
 For an unsuccessful rollout, have the administrator block access or remove the affected deployment using the actions available for that agent type, and verify user access is removed. Preserve sanitized incident evidence. Rebuild the last approved source/configuration as a new higher patch version if a downgrade upload is rejected; revalidate and reapprove it. Keep prior source, configuration, and digest records privately so rollback is reproducible. Do not change document permissions as an agent rollback mechanism.
 
